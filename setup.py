@@ -40,19 +40,19 @@ include_dirs = []
 library_dirs = []
 libraries = []
 extra_link_args = []
-gdal2plus = False
-gdal_output = [None] * 4
-gdalversion = None
+# gdal2plus = False
+# gdal_output = [None] * 4
+# gdalversion = None
 
-try:
-    gdal_version = subprocess.check_output(
-        ['gdal-config', '--version']).decode('utf')
-    gdal_config = os.environ.get('GDAL_CONFIG', 'gdal-config')
+# try:
+#     gdal_version = subprocess.check_output(
+#         ['gdal-config', '--version']).decode('utf')
+#     gdal_config = os.environ.get('GDAL_CONFIG', 'gdal-config')
 
-except Exception:
-    sys.exit("GDAL must be installed to use `solaris`. See the documentation "
-             "for more info. We recommend installing GDAL within a conda "
-             "environment first, then installing solaris there.")
+# except Exception:
+#     sys.exit("GDAL must be installed to use `solaris`. See the documentation "
+#              "for more info. We recommend installing GDAL within a conda "
+#              "environment first, then installing solaris there.")
 
 
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
@@ -63,7 +63,6 @@ else:
                  'affine>=2.3.0',
                  'albumentations==0.4.3',
                  'fiona>=1.7.13',
-                 'gdal>=3.0.2'
                  'geopandas>=0.7.0',
                  'matplotlib>=3.1.2',
                  'networkx>=2.4',
